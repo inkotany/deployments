@@ -22,11 +22,7 @@ services:
       - ./api/.env
     ports:
       - "4000:4000"
-    command: >
-      sh -c "
-      npx prisma migrate deploy
-      "
-
+  
   app:
     build:
       context: ./app
