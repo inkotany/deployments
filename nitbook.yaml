@@ -24,7 +24,7 @@ services:
       - "4000:4000"
     command: >
       sh -c "
-      npx prisma migrate deploy &&
+      npx prisma migrate deploy
       "
 
   app:
