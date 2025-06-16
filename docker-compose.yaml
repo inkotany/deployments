@@ -32,7 +32,7 @@ services:
     depends_on:
       - db
     env_file:
-      - ./api/.env
+      - .env
     ports:
       - "4000:4000"
   
