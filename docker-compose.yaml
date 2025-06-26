@@ -52,6 +52,22 @@ services:
       - API_INTERNAL_URL=http://nitbook_api:4000
       - NEXT_PUBLIC_API_URL=https://api.gaggleniti.com
 
+  librarians:
+    build:
+      context: ./librarians
+      dockerfile: Dockerfile
+    container_name: nitbook_librarians
+    restart: unless-stopped
+    depends_on:
+      - api
+    env_file:
+      - ./librarians/.env
+    ports:
+      - "5000:5000" 
+    environment:
+      - API_INTERNAL_URL=http://nitbook_api:4000
+      - NEXT_PUBLIC_API_URL=https://api.gaggleniti.com  
+
 volumes:
   db_data:
   pgadmin_data:
